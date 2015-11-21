@@ -45,7 +45,7 @@ public class ClientThread implements Runnable {
 	class ClientListener extends Listener {
 		@Override
 		public void received(Connection connection, Object object) {
-			System.out.println("Odpowiedü od serwera: " + object);
+			System.out.println("Server resposnse: " + object);
 		}
 	}
 }

@@ -28,7 +28,6 @@ public class ServerThread implements Runnable  {
 		try {
 			server.bind(PORT_TCP, PORT_UDP);
 			ready.set(true);
-			System.out.println("Ready set to true : " + isReady());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -41,7 +40,7 @@ public class ServerThread implements Runnable  {
 	class ServerListener extends Listener{
 		@Override
 		public void received(Connection connection, Object object) {
-			System.out.println("Otrzymano od: " + connection.getID() + " obiekt: " + object);
+			System.out.println("Recived from client: " + connection.getID() + " object: " + object);
 			connection.sendTCP(new Pong());
 		}
 	}
